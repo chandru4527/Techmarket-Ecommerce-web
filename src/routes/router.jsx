@@ -21,6 +21,7 @@ import Blogs from "../pages/user/Blogs";
 import Aboutus from "../pages/user/Aboutus";
 import Contact from "../pages/user/Contact";
 import WishlistPage from "../pages/user/WishlistPage";
+import LoginPage from "../pages/authpage/LoginPage";
 
 // Admin Pages
 import Dashboard from "../pages/admin/Dashboard";
@@ -37,7 +38,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <UserLayout />,
-
     children: [
       {
         index: true,
@@ -47,7 +47,6 @@ const router = createBrowserRouter([
           permission: ["user", "admin"],
         },
       },
-
       {
         path: "products",
         element: <Products />,
@@ -56,7 +55,6 @@ const router = createBrowserRouter([
           permission: ["user", "admin"],
         },
       },
-
       {
         path: "products/:id",
         element: <ProductDetails />,
@@ -65,7 +63,6 @@ const router = createBrowserRouter([
           permission: ["user", "admin"],
         },
       },
-
       {
         path: "cart",
         element: <CartPage />,
@@ -74,7 +71,6 @@ const router = createBrowserRouter([
           permission: ["user"],
         },
       },
-
       {
         path: "blogs",
         element: <Blogs />,
@@ -83,7 +79,6 @@ const router = createBrowserRouter([
           permission: ["user", "admin"],
         },
       },
-
       {
         path: "about",
         element: <Aboutus />,
@@ -92,7 +87,6 @@ const router = createBrowserRouter([
           permission: ["user", "admin"],
         },
       },
-
       {
         path: "contact",
         element: <Contact />,
@@ -101,7 +95,6 @@ const router = createBrowserRouter([
           permission: ["user", "admin"],
         },
       },
-
       {
         path: "wishlist",
         element: <WishlistPage />,

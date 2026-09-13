@@ -22,11 +22,11 @@ createRoot(document.getElementById('root')).render(
 
     <QueryClientProvider client={queryClient}>
 
-      <ThemeProvider>
+      {/* <ThemeProvider> */}
 
-        <App />
+      <App />
 
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
 
     </QueryClientProvider>
 
