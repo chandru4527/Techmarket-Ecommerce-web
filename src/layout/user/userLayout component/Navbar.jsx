@@ -1,13 +1,12 @@
 import { useState } from "react";
 import Logo from "../../../assets/schon logo.webp";
-// import ThemeToggle from '../../../components/ThemeToggle'
-import { MdMenu, MdClose } from "react-icons/md";
+import { MdClose } from "react-icons/md";
 import {
   FaRegHeart,
   FaShoppingCart,
   FaUser,
+  FaBars
 } from "react-icons/fa";
-
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -27,15 +26,14 @@ const Navbar = () => {
       : "text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white"
     }`;
 
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className="relative border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-black">
-
-      {/* Header */}
       <div className="w-full">
-
         <div className="mx-auto flex max-w-7xl items-center px-4 py-4 lg:px-6">
-
-          {/* Logo */}
           <div className="shrink-0">
             <NavLink to="/">
               <img
@@ -46,70 +44,84 @@ const Navbar = () => {
             </NavLink>
           </div>
 
-          {/* Right Icons */}
           <div className="ml-auto flex items-center gap-1">
-             {/* Desktop Navigation */}
-          <nav className="ml-10 hidden items-center gap-8 lg:flex">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={navLinkClass}
-              >
-                {item.name}
-              </NavLink>
-            ))}
-          </nav>
+            <nav
+              className={`fixed left-0 top-0 z-50 flex h-full w-72 flex-col bg-white p-6 shadow-xl transition-transform duration-300 dark:bg-black lg:static lg:z-auto lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:gap-8 lg:bg-transparent lg:p-0 lg:shadow-none lg:transition-none dark:lg:bg-transparent ${mobileMenuOpen
+                ? "translate-x-0"
+                : "-translate-x-full lg:translate-x-0"
+                }`}
+            >
+              <div className="flex items-center justify-between lg:hidden">
+                <NavLink to="/" onClick={handleNavClick}>
+                  <img
+                    src={Logo}
+                    alt="Schon"
+                    className="h-auto w-28"
+                  />
+                </NavLink>
 
-            {/* Mobile Menu */}
+                <button
+                  type="button"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex h-10 w-10 items-center justify-center text-gray-700 transition hover:text-black dark:text-gray-300 dark:hover:text-white"
+                  aria-label="Close menu"
+                >
+                  <MdClose size={24} />
+                </button>
+              </div>
+
+              <div className="mt-12 flex flex-col gap-6 lg:mt-0 lg:flex-row lg:gap-8">
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    onClick={handleNavClick}
+                    className={navLinkClass}
+                  >
+                    {item.name}
+                  </NavLink>
+                ))}
+              </div>
+            </nav>
+
+            <div className="flex items-center">
+              <NavLink
+                to="/wishlist"
+                className="relative flex h-10 w-10 items-center justify-center text-gray-700 transition hover:text-black dark:text-gray-300 dark:hover:text-white"
+                aria-label="Wishlist"
+              >
+                <FaRegHeart size={19} />
+              </NavLink>
+
+              <NavLink
+                to="/cart"
+                className="relative flex h-10 w-10 items-center justify-center text-gray-700 transition hover:text-black dark:text-gray-300 dark:hover:text-white"
+                aria-label="Shopping cart"
+              >
+                <FaShoppingCart size={19} />
+              </NavLink>
+
+              <NavLink
+                to="/profile"
+                className="flex h-10 w-10 items-center justify-center text-gray-700 transition hover:text-black dark:text-gray-300 dark:hover:text-white"
+                aria-label="Account"
+              >
+                <FaUser size={18} />
+              </NavLink>
+            </div>
+
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="mr-2 flex h-10 w-10 items-center justify-center text-gray-700 transition hover:text-black dark:text-gray-300 dark:hover:text-white lg:hidden"
+              className="flex h-10 w-10 items-center justify-center text-gray-700 transition hover:text-black dark:text-gray-300 dark:hover:text-white lg:hidden"
               aria-label="Open menu"
             >
-              <MdMenu size={27} />
+              <FaBars size={20} />
             </button>
-
-            {/* Wishlist */}
-            <NavLink
-              to="/wishlist"
-              className="relative flex h-10 w-10 items-center justify-center text-gray-700 transition hover:text-black dark:text-gray-300 dark:hover:text-white"
-              aria-label="Wishlist"
-            >
-              <FaRegHeart size={19} />
-
-              <span className="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-black px-1 text-[10px] text-white dark:bg-white dark:text-black">
-                0
-              </span>
-            </NavLink>
-
-            {/* Cart */}
-            <NavLink
-              to="/cart"
-              className="relative flex h-10 w-10 items-center justify-center text-gray-700 transition hover:text-black dark:text-gray-300 dark:hover:text-white"
-              aria-label="Shopping cart"
-            >
-              <FaShoppingCart size={19} />
-
-              <span className="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-black px-1 text-[10px] text-white dark:bg-white dark:text-black">
-                0
-              </span>
-            </NavLink>
-
-            {/* Profile */}
-            <NavLink
-              to="/profile"
-              className="flex h-10 w-10 items-center justify-center text-gray-700 transition hover:text-black dark:text-gray-300 dark:hover:text-white"
-              aria-label="Account"
-            >
-              <FaUser size={18} />
-            </NavLink>
           </div>
         </div>
       </div>
 
-      {/* Dark Overlay */}
       <div
         onClick={() => setMobileMenuOpen(false)}
         className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 lg:hidden ${mobileMenuOpen
@@ -117,8 +129,6 @@ const Navbar = () => {
           : "invisible opacity-0"
           }`}
       />
-
-
     </header>
   );
 };
