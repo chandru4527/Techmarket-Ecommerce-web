@@ -82,3 +82,17 @@ input::-webkit-credentials-auto-fill-button {
     visibility: hidden;
     display: none !important;
 }
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: white;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    width: 24px;
+    border-radius: 10px;
+    background: #3157e3;
+    opacity: 1;
+}
