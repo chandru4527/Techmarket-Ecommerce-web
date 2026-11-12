@@ -96,3 +96,35 @@ input::-webkit-credentials-auto-fill-button {
     background: #3157e3;
     opacity: 1;
 }
+
+
+.category-marquee {
+    width: 100%;
+    overflow: hidden;
+}
+
+.category-track {
+    display: flex;
+    width: max-content;
+    gap: 2rem;
+    animation: category-scroll 40s linear infinite;
+}
+
+.category-marquee:hover .category-track {
+    animation-play-state: paused;
+}
+
+@keyframes category-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .category-track {
+        animation: none;
+    }
+}
