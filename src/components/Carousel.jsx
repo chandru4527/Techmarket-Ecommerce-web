@@ -32,16 +32,14 @@ const Carousel = ({
 
     if (loading) {
         return (
-            <div className="relative w-full animate-pulse overflow-hidden bg-gray-200 mt-5 rounded-md *:aspect-video">
-
-                <div className="relative z-10 flex min-h-64 flex-col justify-center px-6 py-12 sm:min-h-100 sm:px-10 lg:min-h-130 lg:px-16"
-                >
-                    <div className="h-8 w-3/4 max-w-lg rounded-md bg-gray-300 sm:h-12" />
-
-                    <div className="mt-5 h-3 w-full max-w-md rounded bg-gray-300" />
-                    <div className="mt-3 h-3 w-2/3 max-w-sm rounded bg-gray-300" />
-
-                    <div className="mt-7 h-6 w-32 rounded-md bg-gray-300" />
+            <div className="relative w-full animate-pulse overflow-hidden rounded-md bg-gray-200">
+                <div className="relative flex min-h-64 flex-col justify-center overflow-hidden md:min-h-100 lg:min-h-140">
+                    <div className="w-full max-w-xl px-4 py-8 md:px-10 lg:ml-5 lg:px-12">
+                        <div className="h-6 w-3/4 max-w-lg rounded-md bg-gray-300 sm:h-10 lg:h-12" />
+                        <div className="mt-5 h-3 w-full max-w-md rounded bg-gray-300" />
+                        <div className="mt-3 h-3 w-2/3 max-w-sm rounded bg-gray-300" />
+                        <div className="mt-7 h-10 w-32 rounded-md bg-gray-300" />
+                    </div>
                 </div>
 
                 {showDots && (
