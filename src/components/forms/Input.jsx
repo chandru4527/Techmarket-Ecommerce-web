@@ -20,6 +20,7 @@ const Input = ({
     inputClassName = "",
     containerClassName = "",
     disabled = false,
+    readOnly= false,
     ...props
 }) => {
     const [showPassword, setShowPassword] = useState(false);
@@ -61,9 +62,10 @@ const Input = ({
                 <input
                     type={inputType}
                     disabled={disabled}
+                    readOnly={readOnly}
                     placeholder={placeholder}
                     className={twMerge(
-                        "w-full rounded-md border px-3 py-3 text-sm outline-none transition disabled:border-none",
+                        "w-full rounded-md border px-3 py-2.5 text-sm outline-none transition disabled:border-none",
                         hasLeftIcon && "pl-10",
                         (hasRightIcon || isPassword) && "pr-10",
                         error
