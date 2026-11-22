@@ -181,7 +181,7 @@ const LoginPage = () => {
           >
 
             {/* Mobile Logo */}
-            <Link to="/" className="mb-10 block text-center text-3xl font-extrabold text-[#061336] lg:hidden">
+            <Link to="/" className="mb-5 block text-center text-3xl font-extrabold text-[#061336] lg:hidden">
               <Image
                 src="https://res.cloudinary.com/dhlflr2cc/image/upload/v1794023750/Tech_logo-removebg-preview_hqwpuu.png"
                 alt="Logo"
@@ -194,7 +194,7 @@ const LoginPage = () => {
                 Welcome Back
               </span>
 
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[#061336] sm:text-4xl">
+              <h2 className="mt-3 text-xl font-extrabold tracking-tight text-[#061336] md:text-3xl">
                 Sign In to Your Account
               </h2>
 

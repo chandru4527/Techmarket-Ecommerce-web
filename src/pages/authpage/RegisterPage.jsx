@@ -328,7 +328,7 @@ const RegisterPage = () => {
             </form>
 
             {/* Login Link */}
-            <p className="mt-8 text-center text-sm text-gray-500">
+            <p className="mt-5 text-center text-sm text-gray-500">
               Already have an account?{" "}
               <Link
                 to="/login"
