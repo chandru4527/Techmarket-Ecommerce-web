@@ -37,7 +37,7 @@ const Header = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   const goToAccount = () => {
-    navigate(user ? "/profile" : "/login");
+    navigate(user ? "/account" : "/login");
     closeMenu();
   };
 
