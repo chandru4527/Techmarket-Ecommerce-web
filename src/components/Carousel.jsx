@@ -75,7 +75,7 @@ const Carousel = ({
             >
                 {slides.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className="relative flex min-h-64 items-center overflow-hidden bg-black md:min-h-100 lg:min-h-140">
+                        <div className="relative flex min-h-64 items-center overflow-hidden bg-black md:min-h-100 lg:min-h-145">
 
                             {slide.image && (
                                 <>

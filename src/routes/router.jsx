@@ -17,11 +17,13 @@ import Home from "../pages/user/Home";
 import Shop from "../pages/user/Shop";
 import ProductDetails from "../pages/user/ProductDetails";
 import CartPage from "../pages/user/CartPage";
-import Blogs from "../pages/user/Blogs";
 import Aboutus from "../pages/user/Aboutus";
 import Contact from "../pages/user/Contact";
 import WishlistPage from "../pages/user/WishlistPage";
+import TermsPage from "../pages/user/TermsPage";
+import Account from "../pages/user/Account";
 import Profile from "../pages/user/Profile";
+
 
 // Admin Pages
 import Dashboard from "../pages/admin/Dashboard";
@@ -56,10 +58,6 @@ const router = createBrowserRouter([
         element: <CartPage />,
       },
       {
-        path: "blogs",
-        element: <Blogs />,
-      },
-      {
         path: "about",
         element: <Aboutus />,
       },
@@ -72,9 +70,23 @@ const router = createBrowserRouter([
         element: <WishlistPage />,
       },
       {
-        path: "profile",
-        element: <Profile />,
+        path: "terms",
+        element: <TermsPage />
       },
+      {
+        path: "account",
+        element: <Account />,
+        children: [
+          { index: true, element: <Navigate to="profile" replace /> },
+          { path: "profile", element: <Profile /> },
+          // { path: "payments", element: <Payments /> },
+          // { path: "orders", element: <Orders /> },
+          // { path: "coupons", element: <Coupons /> },
+          // { path: "rewards", element: <Rewards /> },
+          // { path: "wallet", element: <Wallet /> },
+          // { path: "gifts", element: <GiftCards /> },
+        ],
+      }
     ],
   },
 
