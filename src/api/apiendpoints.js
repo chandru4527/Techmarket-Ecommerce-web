@@ -28,6 +28,9 @@ const Endpoints = {
     BRANDS: "/user/brands",
     CATEGORIES: "/user/categories",
 
+    WISHLIST: "/user/wishlist",
+    WISHLIST_ID: (id) => `/user/wishlist/${id}`,
+
 };
 
 export default Endpoints;

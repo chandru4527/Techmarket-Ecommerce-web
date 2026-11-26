@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { get, post } from "../api/axios";
-import Endpoints from "../api/apiendpoints";
+import Endpoints from "../api/apiEndpoints";
 
 export const AUTH_USER_KEY = ["auth", "user", "admin"];
 
