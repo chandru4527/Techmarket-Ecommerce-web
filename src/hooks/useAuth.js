@@ -1,16 +1,16 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { get, post } from "../api/axios";
-import Endpoints from "../api/apiEndpoints";
+import Endpoints from "../api/Endpoints";
 
-export const AUTH_USER_KEY = ["auth", "user", "admin"];
+const AUTH_USER_KEY = ["auth", "user", "admin"];
 
 // use current user
 export const useCurrentUser = () => useQuery({
     queryKey: AUTH_USER_KEY,
     queryFn: async () => {
         const data = await get(Endpoints.GET_ME);
-        return data?.results?.user;
+        return data?.result;
     },
     staleTime: 5 * 60 * 1000,
     retry: false,

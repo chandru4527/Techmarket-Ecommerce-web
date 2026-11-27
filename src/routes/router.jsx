@@ -19,10 +19,11 @@ import ProductDetails from "../pages/user/ProductDetails";
 import CartPage from "../pages/user/CartPage";
 import Aboutus from "../pages/user/Aboutus";
 import Contact from "../pages/user/Contact";
-import WishlistPage from "../pages/user/WishlistPage";
+import WishlistPage from "../pages/user/wishlistPage";
 import TermsPage from "../pages/user/TermsPage";
 import Account from "../pages/user/Account";
 import Profile from "../pages/user/Profile";
+import ChangePassword from "../pages/user/ChangePassword";
 
 
 // Admin Pages
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/shop",
+        path: "shop",
         element: <Shop />
       },
       {
@@ -85,6 +86,7 @@ const router = createBrowserRouter([
           // { path: "rewards", element: <Rewards /> },
           // { path: "wallet", element: <Wallet /> },
           // { path: "gifts", element: <GiftCards /> },
+          { path: "change-password", element: <ChangePassword /> },
         ],
       }
     ],

@@ -1,5 +1,5 @@
 import axios from "axios";
-import Endpoints  from "./apiEndpoints";
+import Endpoints  from "./Endpoints";
 
 const baseurl = import.meta.env.VITE_API_BASE_URL;
 

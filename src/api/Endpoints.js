@@ -18,7 +18,7 @@ const Endpoints = {
 
     
     // User
-    UPDATE_PROFILE: "/user/profile",
+    PROFILE: "/user/profile",
     CHANGE_PASSWORD: "/user/change-password",
 
     BANNERS: "/user/banners",
